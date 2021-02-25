@@ -1,0 +1,14 @@
+{
+"aureena:CommonPower": {
+        "NAME": "Placeholder Power",
+        "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
+},
+"aureena:RarePower": {
+        "NAME": "Placeholder Power",
+        "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
+},
+"aureena:TauntPower": {
+         "NAME": "Taunt",
+         "DESCRIPTIONS": ["Attacks you for #b", " turn.", " turns."]
+}
+}
