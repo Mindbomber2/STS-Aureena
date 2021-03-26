@@ -1,6 +1,7 @@
 package aureena.console;
 
 import aureena.characters.AureenaMinion;
+import aureena.fields.MinionFields;
 import basemod.devcommands.ConsoleCommand;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -17,7 +18,9 @@ public class SpawnMinion extends ConsoleCommand {
         AbstractPlayer p = AbstractDungeon.player;
         if (p instanceof AbstractPlayerWithMinions){
             AbstractPlayerWithMinions temp = (AbstractPlayerWithMinions) (p);
-            temp.addMinion(new AureenaMinion(-100,-100));
+            AureenaMinion aureena = new AureenaMinion(-100,-100);
+            temp.addMinion(aureena);
+            MinionFields.targettingMinions.get(AbstractDungeon.player).add(aureena);
         }
     }
 }

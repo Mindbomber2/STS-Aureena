@@ -67,6 +67,11 @@ public class AureenaMinion extends AbstractFriendlyMonster implements OnCardUseL
     public void applyEndOfTurnTriggers() {
         super.applyEndOfTurnTriggers();
 
+        setNewMove();
+        this.intent= Intents.Default;
+    }
+
+    private void setNewMove() {
         switch (intent) {
             case Default:
                 if(getLastTargeted()==null){
@@ -98,7 +103,6 @@ public class AureenaMinion extends AbstractFriendlyMonster implements OnCardUseL
                 }
                 break;
         }
-        this.intent= Intents.Default;
     }
 
     public void setAggrevated(){
@@ -128,7 +132,7 @@ public class AureenaMinion extends AbstractFriendlyMonster implements OnCardUseL
 
     public void setLastTargeted(AbstractMonster m){
         this.lastTargeted=m;
-        System.out.println(lastTargeted.name);
+        setNewMove();
     }
 
     public static void elitesSlain(int number){
@@ -430,6 +434,7 @@ public class AureenaMinion extends AbstractFriendlyMonster implements OnCardUseL
         Default, Aggrevated, Passified
     }
 
+    //Alch Stuff
     private int applyEnemyPowers(AbstractCreature target,int base){
         float tmp = (float) base;
         Iterator var3 = target.powers.iterator();
